@@ -4,3 +4,5 @@
 
 [node name="Player" type="Player"]
 texture = ExtResource("1_glv2v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
