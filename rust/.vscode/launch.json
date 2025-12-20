@@ -5,20 +5,17 @@
             "type": "lldb", // type provided by CodeLLDB extension
             "request": "launch",
             "preLaunchTask": "rust: cargo build",
-            "cwd": "${workspaceFolder}/../godot",
+            "cwd": "${workspaceFolder}",
             "args": [
+                "--path",
+                "${workspaceFolder}/../godot",
                 "--debug-collisions",
                 "--debug-navigation",
             ],
-            "linux": {
-                "program": "/usr/local/bin/godot4",
-            },
-            "windows": {
-                "program": "C:\\ProgramData\\chocolatey\\bin\\godot.exe",
-            },
-            "osx": {
-                "program": "/Applications/Godot.app/Contents/MacOS/Godot",
-            }
-        },
+            "program": "C:\\ProgramData\\chocolatey\\lib\\godot-mono\\tools\\Godot_v4.5.1-stable_mono_win64\\Godot_v4.5.1-stable_mono_win64.exe",
+            "sourceLanguages": [
+                "rust"
+            ],
+        }
     ]
 }

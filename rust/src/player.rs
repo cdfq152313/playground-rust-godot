@@ -28,6 +28,7 @@ impl ISprite2D for Player {
         // rotation += angular_speed * delta
 
         let radians = (self.angular_speed * delta) as f32;
+        let my_vec = Vector2::new(0.0, -1.0);
         self.base_mut().rotate(radians);
         // The 'rotate' method requires a f32,
         // therefore we convert 'self.angular_speed * delta' which is a f64 to a f32
