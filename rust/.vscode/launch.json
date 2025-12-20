@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Debug Project (Godot 4)",
+            "type": "lldb", // type provided by CodeLLDB extension
+            "request": "launch",
+            "preLaunchTask": "rust: cargo build",
+            "cwd": "${workspaceFolder}/../godot",
+            "args": [
+                "--debug-collisions",
+                "--debug-navigation",
+            ],
+            "linux": {
+                "program": "/usr/local/bin/godot4",
+            },
+            "windows": {
+                "program": "C:\\ProgramData\\chocolatey\\bin\\godot.exe",
+            },
+            "osx": {
+                "program": "/Applications/Godot.app/Contents/MacOS/Godot",
+            }
+        },
+    ]
+}

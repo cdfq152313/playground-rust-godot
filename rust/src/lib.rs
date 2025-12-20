@@ -1,4 +1,5 @@
 use godot::prelude::*;
+mod player;
 
 struct MyExtension;
 

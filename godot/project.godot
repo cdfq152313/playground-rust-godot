@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Rust Playground"
+run/main_scene="uid://budxylqe7vgvt"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
