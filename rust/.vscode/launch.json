@@ -4,7 +4,7 @@
             "name": "Debug Project (Godot 4)",
             "type": "lldb", // type provided by CodeLLDB extension
             "request": "launch",
-            "preLaunchTask": "rust: cargo build",
+            "preLaunchTask": "Cargo Build",
             "cwd": "${workspaceFolder}",
             "args": [
                 "--path",

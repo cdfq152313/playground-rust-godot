@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Launch Project",
+            "type": "shell",
+            "command": "C:/ProgramData/chocolatey/bin/godot.exe",
+            "args": [
+                "--path",
+                "${workspaceFolder}/../godot",
+                "--debug-collisions",
+                "--debug-navigation",
+            ],
+            "dependsOn": [
+                "Cargo Build"
+            ],
+        },
+        {
+            "label": "Cargo Build",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build",
+            ]
+        }
+    ]
+}
