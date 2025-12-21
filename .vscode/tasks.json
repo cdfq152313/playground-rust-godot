@@ -16,15 +16,26 @@
             ],
         },
         {
+            "label": "Test Project",
+            "type": "shell",
+            "command": "C:/ProgramData/chocolatey/bin/godot.exe",
+            "args": [
+                "--path",
+                "${workspaceFolder}/godot",
+                "res://test.tscn",
+                "--headless",
+            ],
+            "dependsOn": [
+                "Cargo Build"
+            ],
+        },
+        {
             "label": "Cargo Build",
             "type": "shell",
             "command": "cargo",
             "args": [
                 "build",
             ],
-            "options": {
-                "cwd": "${workspaceFolder}/rust"
-            }
         }
     ]
 }

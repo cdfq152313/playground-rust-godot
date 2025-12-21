@@ -7,4 +7,5 @@ edition = "2024"
 crate-type = ["cdylib"]
 
 [dependencies]
-godot = "0.4.5"
+godot = { workspace = true }
+gd-rehearse = { path = "../gd-rehearse/gd-rehearse" }
