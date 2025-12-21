@@ -8,7 +8,7 @@
             "cwd": "${workspaceFolder}",
             "args": [
                 "--path",
-                "${workspaceFolder}/../godot",
+                "${workspaceFolder}/godot",
                 "--debug-collisions",
                 "--debug-navigation",
             ],

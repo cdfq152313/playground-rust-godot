@@ -7,7 +7,7 @@
             "command": "C:/ProgramData/chocolatey/bin/godot.exe",
             "args": [
                 "--path",
-                "${workspaceFolder}/../godot",
+                "${workspaceFolder}/godot",
                 "--debug-collisions",
                 "--debug-navigation",
             ],
@@ -21,7 +21,10 @@
             "command": "cargo",
             "args": [
                 "build",
-            ]
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/rust"
+            }
         }
     ]
 }

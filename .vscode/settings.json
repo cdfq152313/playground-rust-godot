@@ -1,5 +1,7 @@
 {
-    "git.openRepositoryInParentFolders": "always",
+    "rust-analyzer.linkedProjects": [
+        "rust/Cargo.toml",
+    ],
     "lldb.showDisassembly": "never",
     "lldb.dereferencePointers": true
 }
