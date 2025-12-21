@@ -1,0 +1,3 @@
+[submodule "gd-rehearse"]
+	path = gd-rehearse
+	url = https://github.com/StatisMike/gd-rehearse.git
