@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Rust Playground"
 run/main_scene="uid://budxylqe7vgvt"
-config/features=PackedStringArray("4.5", "Mobile")
+config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]

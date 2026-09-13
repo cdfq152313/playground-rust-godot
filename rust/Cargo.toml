@@ -2,10 +2,10 @@
 name = "rust_project"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.94"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-godot = { workspace = true }
-gd-rehearse = { path = "../gd-rehearse/gd-rehearse" }
+godot = { version = "0.5.5", features = ["api-4-7"] }
