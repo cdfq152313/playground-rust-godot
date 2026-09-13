@@ -1,8 +1,112 @@
-[gd_scene load_steps=2 format=3 uid="uid://budxylqe7vgvt"]
+[gd_scene load_steps=7 format=3 uid="uid://budxylqe7vgvt"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_glv2v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_actor"]
+size = Vector2(56, 72)
 
-[node name="Player" type="Player"]
-texture = ExtResource("1_glv2v")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(1152, 44)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Simulation" type="SimulationNode"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.025, 0.035, 0.075, 1)
+
+[node name="SkyGlow" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 260, 0, 260)
+color = Color(0.07, 0.13, 0.25, 1)
+
+[node name="GroundVisual" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 385, 1152, 385, 1152, 648, 0, 648)
+color = Color(0.08, 0.1, 0.14, 1)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(576, 407)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="Player" type="ActorNode" parent="."]
+position = Vector2(300, 349)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Body" type="Polygon2D" parent="Player"]
+polygon = PackedVector2Array(-28, -36, 28, -36, 28, 36, -28, 36)
+color = Color(0.2, 0.55, 0.95, 1)
+
+[node name="Visor" type="Polygon2D" parent="Player"]
+polygon = PackedVector2Array(5, -24, 22, -24, 22, -10, 5, -10)
+color = Color(0.85, 0.95, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_actor")
+
+[node name="Enemy" type="ActorNode" parent="."]
+position = Vector2(850, 349)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Body" type="Polygon2D" parent="Enemy"]
+polygon = PackedVector2Array(-28, -36, 28, -36, 28, 36, -28, 36)
+color = Color(0.85, 0.26, 0.38, 1)
+
+[node name="Visor" type="Polygon2D" parent="Enemy"]
+polygon = PackedVector2Array(-22, -24, -5, -24, -5, -10, -22, -10)
+color = Color(1, 0.8, 0.85, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_actor")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 700.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.75, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "2D ACTION VERTICAL SLICE"
+
+[node name="Subtitle" type="Label" parent="."]
+offset_left = 30.0
+offset_top = 62.0
+offset_right = 700.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.42, 0.58, 0.75, 1)
+theme_override_font_sizes/font_size = 14
+text = "Rust gameplay core  •  deterministic simulation boundary  •  Godot adapter"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DebugPanel" type="Label" parent="UI"]
+offset_left = 820.0
+offset_top = 22.0
+offset_right = 1130.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(0.78, 0.9, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 15
+text = "Waiting for simulation..."
+autowrap_mode = 2
+
+[node name="Help" type="Label" parent="UI"]
+offset_left = 26.0
+offset_top = 548.0
+offset_right = 805.0
+offset_bottom = 625.0
+theme_override_colors/font_color = Color(0.68, 0.78, 0.9, 1)
+theme_override_font_sizes/font_size = 16
+text = "A / D 移動    Space 跳躍    J 攻擊"
+
+[node name="Architecture" type="Label" parent="UI"]
+offset_left = 820.0
+offset_top = 375.0
+offset_right = 1130.0
+offset_bottom = 510.0
+theme_override_colors/font_color = Color(0.45, 0.62, 0.78, 1)
+theme_override_font_sizes/font_size = 13
+text = "TICK PIPELINE\n\n1  Gather facts / input\n2  Build world snapshot\n3  Decide intents\n4  Resolve interactions\n5  Resolve characters\n6  Apply Godot physics\n7  Present state + trace"
