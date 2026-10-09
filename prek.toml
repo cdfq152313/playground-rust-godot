@@ -1,0 +1,11 @@
+# Format the Rust crate when Rust files are included in a hook run.
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "cargo-fmt"
+name = "cargo fmt"
+language = "system"
+entry = "cargo fmt --manifest-path rust/Cargo.toml --"
+types = ["rust"]
+pass_filenames = false
