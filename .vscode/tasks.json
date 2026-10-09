@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Rust: cargo build (debug)",
+            "type": "process",
+            "command": "cargo",
+            "args": [
+                "build",
+                "--manifest-path",
+                "${workspaceFolder}/rust/Cargo.toml"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Godot: run without debugger",
+            "type": "process",
+            "command": "${config:playground.godotProgram}",
+            "args": [
+                "--path",
+                "${workspaceFolder}/godot",
+                "--debug-collisions",
+                "--debug-navigation"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Rust: cargo build (debug)",
+            "dependsOrder": "sequence",
+            "problemMatcher": []
+        }
+    ]
+}

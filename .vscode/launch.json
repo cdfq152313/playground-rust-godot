@@ -5,6 +5,7 @@
             "name": "Run Godot Project",
             "type": "lldb",
             "request": "launch",
+            "preLaunchTask": "Rust: cargo build (debug)",
             "program": "${config:playground.godotProgram}",
             "cwd": "${workspaceFolder}",
             "args": [
