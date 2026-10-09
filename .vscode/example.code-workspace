@@ -6,6 +6,7 @@
         }
     ],
     "settings": {
+        "window.title": "playground-rust-godot",
         "playground.godotProgram": "/home/denny/development/godot-v4.7.2"
     }
 }
