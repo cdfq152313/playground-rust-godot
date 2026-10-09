@@ -1,0 +1,11 @@
+{
+    "folders": [
+        {
+            "path": "..",
+            "name": "playground-rust-godot"
+        }
+    ],
+    "settings": {
+        "playground.godotProgram": "/home/denny/development/godot-v4.7.2"
+    }
+}

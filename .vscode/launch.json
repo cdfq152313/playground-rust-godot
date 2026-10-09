@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Godot Project",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${config:playground.godotProgram}",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--path",
+                "${workspaceFolder}/godot",
+                "--debug-collisions",
+                "--debug-navigation"
+            ]
+        }
+    ]
+}
